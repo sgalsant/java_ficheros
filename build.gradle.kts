@@ -1,5 +1,5 @@
 plugins {
-    id("java")
+    application
 }
 
 group = "local.santiago.ficheros"
@@ -17,3 +17,4 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
