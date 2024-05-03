@@ -13,10 +13,12 @@ public class Main42 {
         if (fileName == null) return;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                if (line.indexOf(",BEST PICTURE,True") > 0) {
+           String line;
+           while ((line = reader.readLine()) != null) {
+                String[] fields = line.split(",");
+                if (fields.length > 2 &&
+                        fields[1].equalsIgnoreCase("BEST PICTURE") &&
+                        fields[2].equalsIgnoreCase("True")) {
                     System.out.println(line);
                 }
             }
